@@ -1,8 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include "cmd_handler.h" // For command execution tasks
 
 char * usr; // username
 char * host; // machine hostname
+char prompt;
 void exec_prompt(char * usr_name, char * host_name); // execute the main prompt
 char * getHost(void); // returns 'machine hostname'
 void strip_newline( char *str, int size ); // removes the '\0' character from commands
@@ -31,19 +33,24 @@ void main(int argc, char *argv)
 	// Initialization
 	host = getHost();
 	usr = getenv("USER");
+	// Set Prompt type (root or normal)
+	if(isRoot() == 0) {
+		prompt = '$';
+	} else {
+		prompt = '#';
+	}
 	exec_prompt(usr, host);
 }
 
 void exec_prompt(char * usr_name, char * host_name)
 {
-    	char cmd[50]; // declaring the string for command input.
-	if(isRoot() == 0) {
-		printf("%s::%s:$", usr_name, host_name);
-	} else {
-		printf("%s::%s:#", usr_name, host_name);
-	}
+    	char cmd[50]; // declaring the string for command input MAX CHAR is 50.
+
+	printf("%s::%s:%c", usr_name, host_name, prompt);
 	fgets(cmd, 50, stdin); // fgets() is used for standard input.
 	strip_newline(cmd, 50);
+	exec_cmd(cmd);
+	exec_prompt(usr, host);
 }
 
 char * getHost()
