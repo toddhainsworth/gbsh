@@ -44,9 +44,9 @@ void main(int argc, char *argv)
 
 void exec_prompt(char * usr_name, char * host_name)
 {
-    	char cmd[50]; // declaring the string for command input MAX CHAR is 50.
-
-	printf("%s::%s:%c", usr_name, host_name, prompt);
+    char cmd[50]; // declaring the string for command input MAX CHAR is 50.
+	host_name = getHost(); // Stops the faulty hostname bug after echo command
+	printf("%s::%s:%c ", usr_name, host_name, prompt);
 	fgets(cmd, 50, stdin); // fgets() is used for standard input.
 	strip_newline(cmd, 50);
 	exec_cmd(cmd);
@@ -56,8 +56,8 @@ void exec_prompt(char * usr_name, char * host_name)
 char * getHost()
 {
 	char hostname[1024];
-        hostname[1023] = '\0';
-        gethostname(hostname, 1023);
+    hostname[1023] = '\0';
+    gethostname(hostname, 1023);
 
 	return hostname;
 }

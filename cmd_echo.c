@@ -5,13 +5,18 @@
 #include "cmd_echo.h"
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 #define MAX_LEN 128
 
 void do_echo() 
 {
-	char string_to_echo[MAX_LEN];
-	printf("Enter string to echo: ");
-	fgets(string_to_echo, MAX_LEN, stdin);
-	printf("%s", string_to_echo);
+	char text[128];
+	//char where[256];
+	printf("Text: ");
+	fgets(text, 128, stdin);
+	//printf("Where [console]: ");
+	//fgets(where, 50, stdin);
+	
+	printf("%s", text);
 }
