@@ -51,5 +51,8 @@ void print_help_commands()
 	printf("-------------------------\n");
 	printf("echo - Prints to the terminal\n");
 	printf("help - Takes you to the help screen\n");
+	printf("cd   - Change current directory\n");
+	printf("pwd  - Print Working Directory\n");
+	printf("ls   - List Directory Contents\n");
 	printf("exit - Exits gbsh\n");
 }

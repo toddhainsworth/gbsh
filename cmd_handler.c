@@ -6,6 +6,9 @@
 // Command Headers
 #include "cmd_echo.h"
 #include "cmd_help.h"
+#include "cmd_ls.h"
+#include "cmd_cd.h"
+#include "cmd_pwd.h"
 
 void exec_cmd(char * command) 
 {
@@ -20,6 +23,18 @@ void exec_cmd(char * command)
 	else if(strcmp(command, "help") == 0) // help command
 	{
 		print_help();
+	}
+	else if(strcmp(command, "ls") == 0) // ls command
+	{
+		do_ls();
+	}
+	else if(strcmp(command, "cd") == 0) // cd command
+	{
+		do_cd();
+	}
+	else if(strcmp(command, "pwd") == 0) // pwd command
+	{
+		do_pwd();
 	}
 	else 
 	{
