@@ -25,5 +25,5 @@
 
 void do_clear()
 {
-    system("clear");
+    printf("\033[0;0H\033[2J");
 }

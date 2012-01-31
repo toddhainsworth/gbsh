@@ -21,7 +21,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "cmd_handler.h" // For command execution tasks
-
+#include "cmd_clear.h" // to clear the screen on startup
 char * usr; // username
 char * host; // machine hostname
 char prompt;
@@ -59,7 +59,7 @@ void main(int argc, char *argv)
 	} else {
 		prompt = '#';
 	}
-	system("clear");
+	do_clear();
 	exec_prompt(usr, host);
 }
 
