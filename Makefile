@@ -1,5 +1,5 @@
 #  
-#    --cmd_cd.h--
+#    --Makefile--
 #    Copyright (C) 2012 GeissT
 #
 #    This program is free software: you can redistribute it and/or modify
@@ -15,8 +15,8 @@
 #    You should have received a copy of the GNU General Public License
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
-#    HEADER FOR CMD_CD.C (THE CD COMMAND)
+#    Makefile for gbsh
 #
 
 all:
-	gcc gbsh.c cmd_echo.c cmd_pwd.c cmd_cd.c cmd_help.c cmd_ls.c cmd_handler.c -o gbsh
+	gcc gbsh.c util_stringeditor.c cmd_clear.c cmd_echo.c cmd_pwd.c cmd_cd.c cmd_help.c cmd_ls.c cmd_handler.c -o gbsh

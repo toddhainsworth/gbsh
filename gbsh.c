@@ -59,6 +59,7 @@ void main(int argc, char *argv)
 	} else {
 		prompt = '#';
 	}
+	system("clear");
 	exec_prompt(usr, host);
 }
 

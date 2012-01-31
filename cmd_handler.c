@@ -29,6 +29,10 @@
 #include "cmd_ls.h"
 #include "cmd_cd.h"
 #include "cmd_pwd.h"
+#include "cmd_clear.h"
+
+// Utility Headers
+#include "util_stringeditor.h"
 
 void exec_cmd(char * command) 
 {
@@ -55,6 +59,14 @@ void exec_cmd(char * command)
 	else if(strcmp(command, "pwd") == 0) // pwd command
 	{
 		do_pwd();
+	}
+	else if(strcmp(command, "clear") == 0) // clear command
+	{
+		do_clear();
+	}
+	else if(strcmp(command, "editor") ==0) // invoke the string editor
+	{
+		edit_string();
 	}
 	else 
 	{
