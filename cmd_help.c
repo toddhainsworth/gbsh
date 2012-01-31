@@ -65,10 +65,11 @@ void print_help_commands()
 {
 	printf("gbsh - Available Commands\n");
 	printf("-------------------------\n");
-	printf("echo - Prints to the terminal\n");
-	printf("help - Takes you to the help screen\n");
-	printf("cd   - Change current directory\n");
-	printf("pwd  - Print Working Directory\n");
-	printf("ls   - List Directory Contents\n");
+	printf("echo   - Prints to the terminal\n");
+	printf("help   - Takes you to the help screen\n");
+	printf("cd     - Change current directory\n");
+	printf("pwd    - Print Working Directory\n");
+	printf("ls     - List Directory Contents\n");
+	printf("editor - Executes the string editor\n");
 	printf("exit - Exits gbsh\n");
 }
