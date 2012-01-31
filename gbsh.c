@@ -59,7 +59,7 @@ void main(int argc, char *argv)
 	} else {
 		prompt = '#';
 	}
-	system("clear");
+	printf("\033[0;0H\033[2J");
 	exec_prompt(usr, host);
 }
 
