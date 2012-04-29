@@ -20,6 +20,7 @@
 
 #include "cmd_handler.h"
 #include <stdio.h>
+#include <unistd.h>
 #include <stdlib.h>
 #include <string.h>
 
@@ -30,6 +31,7 @@
 #include "cmd_cd.h"
 #include "cmd_pwd.h"
 #include "cmd_clear.h"
+#include "cmd_sudo.h"
 
 // Utility Headers
 #include "util_stringeditor.h"
@@ -42,7 +44,10 @@ void exec_cmd(char * command)
 	}
 	else if(strcmp(command, "exit") == 0) // exit command
 	{
-		exit(0);
+		if(getuid() == 0)
+			sudo_down();
+		else
+			exit(0);
 	}
 	else if(strcmp(command, "help") == 0) // help command
 	{
@@ -64,9 +69,17 @@ void exec_cmd(char * command)
 	{
 		do_clear();
 	}
-	else if(strcmp(command, "editor") ==0) // invoke the string editor
+	else if(strcmp(command, "editor") == 0) // invoke the string editor
 	{
 		edit_string();
+	}
+	else if(strcmp(command, "getuser") == 0) // check user information
+	{
+		print_user();
+	}
+	else if(strcmp(command, "sudo") == 0) // give root priv
+	{
+		sudo_up();
 	}
 	else 
 	{

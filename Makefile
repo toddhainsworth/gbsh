@@ -19,4 +19,6 @@
 #
 
 all:
-	gcc gbsh.c util_stringeditor.c cmd_clear.c cmd_echo.c cmd_pwd.c cmd_cd.c cmd_help.c cmd_ls.c cmd_handler.c -o gbsh
+	gcc gbsh.c util_stringeditor.c cmd_clear.c cmd_echo.c cmd_pwd.c cmd_cd.c cmd_help.c cmd_ls.c cmd_handler.c cmd_sudo.c -o gbsh
+clean:
+	rm -f gbsh

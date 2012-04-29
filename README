@@ -12,3 +12,6 @@ TODO
 Improve commands
 Add more commands eg. cat, grep etc
 Add a text editor, either nano or create own
+Finish of SUDO command
+
+Skeleton is set out for the SUDO command, just needs implementation.

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="3.5" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{AB783C0D-3475-43BF-9FC8-7B0E43EF2AA1}</ProjectGuid>
+    <Target>Bin</Target>
+    <Language>C</Language>
+    <Compiler>
+      <Compiler ctype="GccCompiler" />
+    </Compiler>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineSymbols>DEBUG MONODEVELOP</DefineSymbols>
+    <SourceDirectory>.</SourceDirectory>
+    <OutputName>gbsh</OutputName>
+    <CompileTarget>Bin</CompileTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release</OutputPath>
+    <DefineSymbols>MONODEVELOP</DefineSymbols>
+    <SourceDirectory>.</SourceDirectory>
+    <OptimizationLevel>3</OptimizationLevel>
+    <OutputName>gbsh</OutputName>
+    <CompileTarget>Bin</CompileTarget>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="cmd_cd.c" />
+    <Compile Include="cmd_clear.c" />
+    <Compile Include="cmd_echo.c" />
+    <Compile Include="cmd_handler.c" />
+    <Compile Include="cmd_help.c" />
+    <Compile Include="cmd_ls.c" />
+    <Compile Include="cmd_pwd.c" />
+    <Compile Include="cmd_sudo.c" />
+    <Compile Include="gbsh.c" />
+    <Compile Include="util_stringeditor.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="cmd_cd.h" />
+    <None Include="cmd_clear.h" />
+    <None Include="cmd_echo.h" />
+    <None Include="cmd_handler.h" />
+    <None Include="cmd_help.h" />
+    <None Include="cmd_ls.h" />
+    <None Include="cmd_pwd.h" />
+    <None Include="cmd_sudo.h" />
+    <None Include="LICENSE" />
+    <None Include="Makefile" />
+    <None Include="README" />
+    <None Include="util_stringeditor.h" />
+  </ItemGroup>
+</Project>
